@@ -33,3 +33,13 @@ Meteor Crush can definitely be made a multiplayer game in the near future by add
 * The number of powerups can be increased giving more functionailty and addictie factor to the game. 
 * Multiple levels can be itroduced, where the difficulty increases. 
 * Different modes can be introduced like - arcade mode (simple version like the current), Competitive, Multi-laser etc. 
+
+
+
+
+Deadline - by 7 pm : 
+13 Commits were made which include:
+* All assets (sprites, sound assets, UI)
+
+Features that could not be implemented before the deadline:
+* Power ups, Dynamic difficulty & gameplay features
