@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1668617183416534955}
   - component: {fileID: 6999829368293438661}
   - component: {fileID: 6648867655934850079}
+  - component: {fileID: 1080031991565758178}
   m_Layer: 0
   m_Name: MeteorS_0
   m_TagString: obstacle
@@ -119,3 +120,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MeteorHealth: 1
   Speed: 20
+--- !u!58 &1080031991565758178
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445145031064326194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25

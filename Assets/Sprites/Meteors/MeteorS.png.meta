@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: 3365858987385539725
     second: MeteorS_2
+  - first:
+      213: 1214781996514145500
+    second: MeteorS_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -240,6 +243,27 @@ TextureImporter:
       bones: []
       spriteID: d8ccb2b7aeee5be20800000000000000
       internalID: 3365858987385539725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeteorS_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 11
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4f3c52ac5cbd010800000000000000
+      internalID: 1214781996514145500
       vertices: []
       indices: 
       edges: []
