@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class shootbutton : MonoBehaviour , IPointerDownHandler, IPointerUpHandler
+public class shootbutton : MonoBehaviour
 {
-    public bool shooting = false;
-
-    public void OnPointerDown(PointerEventData eventData)
-    {   
-        shooting = true;
-        FindObjectOfType<basicmove>().Shoot();
-    }
-
-      
-    public void OnPointerUp(PointerEventData eventData)
+    public bool isShooting;
+    private void Start()
     {
-        shooting = false;
-      
-
+        isShooting = false;
     }
- 
-
-
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && (!isShooting))
+        {
+            FindObjectOfType<PlayerScript>().startShooting();
+            isShooting = true;
+        }
+        if(Input.GetMouseButtonUp(0) && (isShooting))
+        {
+            FindObjectOfType<PlayerScript>().stopShooting();
+            isShooting = false;
+        }
+    }
 }

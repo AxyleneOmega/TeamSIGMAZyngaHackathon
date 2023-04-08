@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class scroller : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         Debug.Log(Screen.height + "x" + Screen.width);
@@ -12,13 +11,20 @@ public class scroller : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        transform.position += new Vector3(0 , -500 * Time.deltaTime);
-
-        if (transform.position.y < -1080)
+    {
+        if (this.isActiveAndEnabled)
         {
-            transform.position = new Vector3(transform.position.x , 1080f);
+            Scroll();
         }
-        
+    }
+
+    private void Scroll()
+    {
+        transform.position += new Vector3(0, -Screen.width / 2 * Time.deltaTime);
+
+        if (transform.position.y < -Screen.width)
+        {
+            transform.position = new Vector3(transform.position.x, Screen.width);
+        }
     }
 }

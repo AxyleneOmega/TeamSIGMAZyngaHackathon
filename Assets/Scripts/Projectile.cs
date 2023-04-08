@@ -22,6 +22,13 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
+        if (this.isActiveAndEnabled)
+        {
+            ShootProjectile();
+        }
+    }
+    private void ShootProjectile()
+    {
         this.transform.position += this.direction * this.speed * Time.deltaTime;
     }
 
@@ -29,11 +36,8 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.tag == "border")
         {
-
             Destroy(gameObject);
-            
         }
-      
     }
 
     private void OnTriggerEnter2D(Collider2D other)
