@@ -9,16 +9,12 @@ public class PlayerScript : MonoBehaviour
     public Projectile laserPrefab;
     public TextMeshProUGUI[] score;
     public GameObject gameOverScreen;
-    public GameObject smallMeteorPrefab;
-    public GameObject mediumMeteorPrefab;
-    public GameObject largeMeteorPrefab;
     public bool laserActive { get; private set; }
     public float firingDelay = 1f;
     float timer;
     public bool gameRunning = true;
     private int currentScore = 0;
     private int highScore = 0;
-    private bool currentlySpawning = false;
     private int health = 3;
     private int difficulty = 0;
 
@@ -67,29 +63,12 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    IEnumerator spawn(GameObject gameObject, float delay)
-    {
-        currentlySpawning = true;
-        yield return new WaitForSeconds(delay);
-        float xMin = Screen.safeArea.xMin;
-        float yMin = Screen.safeArea.yMin;
-        float xMax = Screen.safeArea.xMax;
-        float yMax = Screen.safeArea.yMax;
-        GameObject sM = Instantiate(gameObject);
-        sM.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(20, Screen.width-20), Screen.height - 20, 10));
-        currentlySpawning = false;
-    }
+    
 
     void FixedUpdate(){
         if (this.isActiveAndEnabled)
         {
-            if (gameRunning && Time.timeScale > 0 && !currentlySpawning)
-            {
-                StartCoroutine(spawn(smallMeteorPrefab, 2));
-                StartCoroutine(spawn(mediumMeteorPrefab, 4));
-                StartCoroutine(spawn(largeMeteorPrefab, 7));
-            }
-
+            
             if (health <= 0)
             {
                 GameOver();
