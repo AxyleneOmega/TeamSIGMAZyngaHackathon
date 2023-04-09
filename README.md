@@ -11,8 +11,8 @@ GitHub Repository for the submission of Team SIGMA in the Zynga Games Hackathon 
 
 ### How we designed Meteor Crush 
 * 2D pixel Art - Aseprite : Game objects, UI of the game. 
-* Game Design and logic - Unity(2020.3.46f1) : assembling all the assets, adding code. 
-* Game Programming - Visual Studio Code: C# programming for differnt functionlities of the game. 
+* Game Design and logic - Unity(2020.3.46f1) : assembling all the assets, adding code.
+* Game Programming - Visual Studio Code: C# programming for differnt functionlities of the game(Game programmers - Advaith Karnad and Pranav Vasudeva)
 * Sound Engineering - Open Source : Downloded different relavent sound tracks via the internet and modified them accordingly. 
 * Game Testing - Unity : Checked the functionality of each object in the game environment and optimised the code. 
 
