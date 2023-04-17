@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 10fd79c5935162e47b055edddf817933
+guid: d6e161677400b5043a9ee684af542252
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9213514263536828302
-    second: Ship_1-sheet_0
+      213: 3687188469698525769
+    second: transpoStarsBG_0
   - first:
-      213: -4661819034930901649
-    second: Ship_1-sheet_1
+      213: 592792560332461574
+    second: transpoStarsBG_1
   - first:
-      213: 650360067777941458
-    second: Ship_1-sheet_2
+      213: -2298646389735477005
+    second: transpoStarsBG_2
+  - first:
+      213: -6296108607521200154
+    second: transpoStarsBG_3
+  - first:
+      213: 6290668674533552246
+    second: transpoStarsBG_4
+  - first:
+      213: 7706873237104283276
+    second: transpoStarsBG_5
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -44,18 +53,18 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,18 +108,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -169,68 +166,143 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ship_1-sheet_0
+      name: transpoStarsBG_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 1080
+        height: 2060
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27084e4b795032080800000000000000
-      internalID: -9213514263536828302
+      spriteID: 94afb4ca0668b2330800000000000000
+      internalID: 3687188469698525769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_1-sheet_1
+      name: transpoStarsBG_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 1088
         y: 0
-        width: 32
-        height: 32
+        width: 1080
+        height: 2060
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6d0acf7944ed4fb0800000000000000
-      internalID: -4661819034930901649
+      spriteID: 6065c1061b50a3800800000000000000
+      internalID: 592792560332461574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_1-sheet_2
+      name: transpoStarsBG_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 2179
         y: 0
-        width: 32
-        height: 32
+        width: 1080
+        height: 2060
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dfc000390b860900800000000000000
-      internalID: 650360067777941458
+      spriteID: 3f0359b89419910e0800000000000000
+      internalID: -2298646389735477005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: transpoStarsBG_3
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 0
+        width: 1080
+        height: 2060
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e76b65649abf98a0800000000000000
+      internalID: -6296108607521200154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: transpoStarsBG_4
+      rect:
+        serializedVersion: 2
+        x: 4359
+        y: 0
+        width: 1080
+        height: 2060
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670ff3184d1fc4750800000000000000
+      internalID: 6290668674533552246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: transpoStarsBG_5
+      rect:
+        serializedVersion: 2
+        x: 5450
+        y: 0
+        width: 1080
+        height: 2060
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ec09a506054fa60800000000000000
+      internalID: 7706873237104283276
       vertices: []
       indices: 
       edges: []

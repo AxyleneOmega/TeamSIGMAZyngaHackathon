@@ -7,9 +7,9 @@ TagManager:
   - border
   - shootbutton
   - obstacle
-  - bottomBorder
   - laser
   - score
+  - powerup
   layers:
   - Default
   - TransparentFX

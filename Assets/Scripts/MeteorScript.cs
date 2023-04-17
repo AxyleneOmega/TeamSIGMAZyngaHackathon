@@ -10,11 +10,14 @@ public class MeteorScript : MonoBehaviour
     bool isAlive = true;
     public System.Action<MeteorScript> destroyed;
     public new CircleCollider2D collider { get; private set; }
+    public bool currentlyColliding = false;
     public Animator animator;
     bool killed = false;
 
+
     private void Start()
     {
+        isAlive = true;
         killed = false;
         animator = gameObject.GetComponent<Animator>();
         animator.SetBool("isAlive", true);
@@ -26,6 +29,11 @@ public class MeteorScript : MonoBehaviour
         {
             isAlive = false;
         }
+        if(this.transform.position.y < Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.safeArea.yMin-100, 10)).y)
+        {
+            scoreAdded = 5;
+            isAlive = false;
+        }
     }
 
     private void FixedUpdate()
@@ -33,13 +41,12 @@ public class MeteorScript : MonoBehaviour
         if (this.isActiveAndEnabled)
         {
             move();
-            
         }
         if (!isAlive && !killed)
         {
             animator.SetBool("isAlive", false);
             killed = true;
-            StartCoroutine(Kill());
+            StartCoroutine(Kill(0.3f, scoreAdded));
         }
     }
 
@@ -51,12 +58,14 @@ public class MeteorScript : MonoBehaviour
         }
     }
 
-    IEnumerator Kill()
+    public IEnumerator Kill(float delay, int addScore)
     {
-        yield return new WaitForSeconds(0.5f);
-        FindObjectOfType<PlayerScript>().incrementScore(scoreAdded);
-        Destroy(this.gameObject);   
+        yield return new WaitForSeconds(delay);
+        FindObjectOfType<PlayerScript>().incrementScore(addScore);
+        FindObjectOfType<GameplayManager>().removeMeteor(this.gameObject);
+        Destroy(this.gameObject);
     }
+
     private void OnDestroy()
     {
         if (this.destroyed != null)
@@ -64,6 +73,7 @@ public class MeteorScript : MonoBehaviour
             this.destroyed.Invoke(this);
         }
     }
+
     private void CheckCollision(Collider2D other)
     {
         if (other.gameObject.tag == "laser")
@@ -71,16 +81,11 @@ public class MeteorScript : MonoBehaviour
             MeteorHealth -= 1;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !currentlyColliding)
         {
+            isAlive = false;
             other.gameObject.GetComponent<PlayerScript>().reduceHealth();
-            animator.SetBool("isAlive", false);
-            isAlive = false;
-        }
-        if (other.gameObject.tag == "bottomBorder")
-        {
-            FindObjectOfType<PlayerScript>().incrementScore(5);
-            isAlive = false;
+            currentlyColliding = true;
         }
     }
 

@@ -11,37 +11,44 @@ public class PlayerScript : MonoBehaviour
     public GameObject gameOverScreen;
     public bool laserActive { get; private set; }
     public float firingDelay = 1f;
-    float timer;
     public bool gameRunning = true;
-    private int currentScore = 0;
-    private int highScore = 0;
-    private int health = 3;
-    private int difficulty = 0;
+    [SerializeField] private int currentScore = 0;
+    [SerializeField] private int highScore = 0;
+    [SerializeField] private int health = 3;
+    private bool canBeHitByMeteor;
+    private Animator shipAnimator;
+    float timer;
+    private bool isAlive=true;
 
     private void Start()
     {
+        shipAnimator = gameObject.GetComponent<Animator>();
         Time.timeScale = 1;
         gameOverScreen.SetActive(false);
         health = 3;
+        isAlive = true;
         currentScore = 0;
         gameRunning = true;
+        canBeHitByMeteor = true;
         if (!PlayerPrefs.HasKey("highScore"))
         {
             highScore = PlayerPrefs.GetInt("highScore");
+            PlayerPrefs.SetInt("highScore", highScore);
         }
     }
 
-    void GameOver()
+    IEnumerator GameOver()
     {
-        gameOverScreen.SetActive(true);
         if (currentScore > highScore)
         {
-            PlayerPrefs.SetInt("highScore", currentScore);
             highScore = currentScore;
-
+            PlayerPrefs.SetInt("highScore", highScore);
         }
         gameRunning = false;
-        Time.timeScale = 0;
+        FindAnyObjectByType<GameplayManager>().StopGame();
+        yield return new WaitForSeconds(0.5f);
+        gameOverScreen.SetActive(true);
+        Debug.Log("game over after");        
     }
     void Update()
     {
@@ -57,9 +64,10 @@ public class PlayerScript : MonoBehaviour
 
     public void reduceHealth()
     {
+        if (canBeHitByMeteor) { }
         if(health > 0)
         {
-            health -= 1;
+            this.health--;
         }
     }
 
@@ -68,13 +76,13 @@ public class PlayerScript : MonoBehaviour
     void FixedUpdate(){
         if (this.isActiveAndEnabled)
         {
-            
-            if (health <= 0)
+            shipAnimator.SetInteger("Health", this.health);
+            if (health <= 0 && isAlive)
             {
-                GameOver();
+                StopAllCoroutines();
+                StartCoroutine(GameOver());
+                isAlive = false;
             }
-            float add = Time.fixedDeltaTime;
-            difficulty = (int)add;
         }
     }
     

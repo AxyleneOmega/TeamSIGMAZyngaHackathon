@@ -20,11 +20,11 @@ public class scroller : MonoBehaviour
 
     private void Scroll()
     {
-        transform.position += new Vector3(0, -Screen.width / 2 * Time.deltaTime);
+        transform.position += new Vector3(0, -Time.deltaTime);
 
-        if (transform.position.y < -Screen.width)
+        if (transform.position.y < -10)
         {
-            transform.position = new Vector3(transform.position.x, Screen.width);
+            transform.position = new Vector3(transform.position.x, 10);
         }
     }
 }

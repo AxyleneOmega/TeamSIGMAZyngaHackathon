@@ -121,6 +121,7 @@ MonoBehaviour:
   MeteorHealth: 3
   scoreAdded: 20
   Speed: 10
+  currentlyColliding: 0
   animator: {fileID: 0}
 --- !u!58 &-174748588704420565
 CircleCollider2D:

@@ -119,7 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MeteorHealth: 1
+  scoreAdded: 10
   Speed: 20
+  currentlyColliding: 0
+  animator: {fileID: 0}
 --- !u!58 &1080031991565758178
 CircleCollider2D:
   m_ObjectHideFlags: 0

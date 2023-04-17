@@ -27,17 +27,6 @@ public class shootbutton : MonoBehaviour
 
     private bool isValid()
     {
-        int offset = 120;
-        if (
-        Input.mousePosition.x < this.gameObject.transform.position.x + offset &&
-        Input.mousePosition.x > this.gameObject.transform.position.x - offset &&
-        Input.mousePosition.y < this.gameObject.transform.position.y + offset &&
-        Input.mousePosition.y > this.gameObject.transform.position.y - offset
-        ) { return true;}
-        else
-        {
-            return false;
-        }
-
+        return this.gameObject.GetComponent<CircleCollider2D>() == Physics2D.OverlapPoint(Input.mousePosition);
     }
 }
